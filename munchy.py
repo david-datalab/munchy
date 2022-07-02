@@ -1,4 +1,3 @@
-
 """
 a program to help remember or recover forgotten passwords
 how to determine how will it work ?
@@ -25,30 +24,37 @@ Welcome to Munchy, a smart password recovery utility.
 """)
 
 # user inputs | add choice for only letters or digits or special characters
+
 guess = int(input("How many passwords to generate? "))  # will be deprecated when a database will be added
-length = int(input("Enter Length: "))
+#length = int(input("Enter Length: "))
 pattern = input("Enter Pattern: ")
 for char in pattern:
+    print(char)
     if char == "A":
-        print("A")
+        #print("A")
+        strings = string.ascii_letters
+        characters = strings
     elif char == "a":
-        print("a")
+        #print("a")
+        strings = string.ascii_letters
+        characters = strings
     elif char == "1":
-        print("a")
+        #print("1")
+        digits = string.digits
+        characters = digits
     elif char == "*":
-        print("*")
+        #print("*")
+        specChars = string.punctuation
+        characters = specChars
     else:
         print("error")
         break
-# characters variables
-strings = string.ascii_letters
-digits = string.digits
-specChars = string.punctuation
 
-# user selections for generating passwords
-characters = strings + digits + specChars
-
-# the results
 for i in range(guess):
-    password = "".join(choice(characters) for x in range(length))
+    password = "".join(choice(characters) for x in range(len(pattern)))
     print(password)
+
+
+# characters variables
+# user selections for generating passwords + digits + specChars
+# the results
