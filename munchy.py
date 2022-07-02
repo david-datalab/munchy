@@ -30,6 +30,7 @@ guess = int(input("How many passwords to generate? "))  # will be deprecated whe
 pattern = input("Enter Pattern: ")
 for char in pattern:
     print(char)
+    # nested loops with indexed lists
     if char == "A":
         #print("A")
         strings = string.ascii_letters
