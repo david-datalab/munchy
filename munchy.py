@@ -59,3 +59,4 @@ for i in range(guess):
 # characters variables
 # user selections for generating passwords + digits + specChars
 # the results
+["a","A",]
