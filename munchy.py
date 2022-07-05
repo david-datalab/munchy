@@ -24,38 +24,47 @@ Welcome to Munchy, a smart password recovery utility.
 """)
 
 # user inputs | add choice for only letters or digits or special characters
-
+"""
 guess = int(input("How many passwords to generate? "))  # will be deprecated when a database will be added
-#length = int(input("Enter Length: "))
+# length = int(input("Enter Length: "))
 pattern = input("Enter Pattern: ")
 for char in pattern:
-    print(char)
-    # nested loops with indexed lists
+    # print(char)
     if char == "A":
-        #print("A")
+        # print("A")
         strings = string.ascii_letters
-        characters = strings
-    elif char == "a":
-        #print("a")
-        strings = string.ascii_letters
-        characters = strings
-    elif char == "1":
-        #print("1")
-        digits = string.digits
-        characters = digits
-    elif char == "*":
-        #print("*")
-        specChars = string.punctuation
-        characters = specChars
+        if char == "a":
+            # print("a")
+            strings = string.ascii_letters
+            if char == "1":
+                # print("1")
+                digits = string.digits
+                if char == "*":
+                    # print("*")
+                    specChars = string.punctuation
+                else:
+                    print("error")
+                    pass
+"""
+# for i in range(guess):
+#    password = "".join(choice(strings + digits + specChars) for x in range(len(pattern)))
+#    print(password)
+print("Enter Pattern:")
+
+
+def pattern_loader(userinput):
+    userinput = userinput.split(' ')
+    print(userinput)
+    if "A" in userinput:
+        print("yes A")
+    elif "a" in userinput:
+        print("yes a")
+    elif "1" in userinput:
+        print("yes 1")
     else:
-        print("error")
-        break
+        print("No")
+    return None
 
-for i in range(guess):
-    password = "".join(choice(characters) for x in range(len(pattern)))
-    print(password)
+pattern_loader(input())
+# I need to split the pattern into a list and depending on the characters I will analyse each character to generate a password
 
-
-# characters variables
-# user selections for generating passwords + digits + specChars
-# the results
