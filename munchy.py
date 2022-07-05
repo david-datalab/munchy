@@ -49,22 +49,22 @@ for char in pattern:
 # for i in range(guess):
 #    password = "".join(choice(strings + digits + specChars) for x in range(len(pattern)))
 #    print(password)
+
+
+# I need to split the pattern into a list and depending on the characters I will analyse each character to generate a password
 print("Enter Pattern:")
+lst = list()
 
 
 def pattern_loader(userinput):
-    userinput = userinput.split(' ')
-    print(userinput)
-    if "A" in userinput:
-        print("yes A")
-    elif "a" in userinput:
-        print("yes a")
-    elif "1" in userinput:
-        print("yes 1")
-    else:
-        print("No")
-    return None
+    for singleChar in userinput:
+        if singleChar == "A" or singleChar == "a" or singleChar == "1" or singleChar == "*" or singleChar == " ":
+            lst.append(singleChar)
+        else:
+            print("not a valid pattern")
+            break
+    return lst
+
 
 pattern_loader(input())
-# I need to split the pattern into a list and depending on the characters I will analyse each character to generate a password
-
+print(lst)
