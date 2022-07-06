@@ -22,8 +22,27 @@ Welcome to Munchy, a smart password recovery utility.
 3. you can choose if the password consist of only letters or digits or special characters
 4. you can choose a name for the output list
 """)
+print("Enter Pattern:")
+lst = list()
 
-# user inputs | add choice for only letters or digits or special characters
+
+def pattern_loader(userinput):
+    for singleChar in userinput:
+        if singleChar == "A" or singleChar == "a" or singleChar == "1" or singleChar == "*" or singleChar == " ":
+            lst.append(singleChar)
+        else:
+            print("not a valid pattern")
+            break
+    return lst
+
+
+pattern_loader(input())
+print(lst)
+l = int(input("how many ?"))
+for i in lst:
+    password = "".join(choice(string.ascii_letters).upper() for x in range(l))
+    print(password)
+
 """
 guess = int(input("How many passwords to generate? "))  # will be deprecated when a database will be added
 # length = int(input("Enter Length: "))
@@ -49,22 +68,3 @@ for char in pattern:
 # for i in range(guess):
 #    password = "".join(choice(strings + digits + specChars) for x in range(len(pattern)))
 #    print(password)
-
-
-# I need to split the pattern into a list and depending on the characters I will analyse each character to generate a password
-print("Enter Pattern:")
-lst = list()
-
-
-def pattern_loader(userinput):
-    for singleChar in userinput:
-        if singleChar == "A" or singleChar == "a" or singleChar == "1" or singleChar == "*" or singleChar == " ":
-            lst.append(singleChar)
-        else:
-            print("not a valid pattern")
-            break
-    return lst
-
-
-pattern_loader(input())
-print(lst)
