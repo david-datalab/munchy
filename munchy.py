@@ -37,14 +37,16 @@ def pattern_loader(userinput):
 
 
 pattern_loader(input())
-print(lst)
-l = int(input("how many ?"))
-for i in lst:
-    password = "".join(choice(string.ascii_letters).upper() for x in range(l))
-    print(password)
+number_of_passwords = int(input("How many passwords to generate? "))
+for i in range(number_of_passwords):
+    if lst[i] == "A":
+        password = "".join(choice(string.ascii_uppercase) for x in range(len(lst)))
+        print(password)
+
+# To fight randomness or not ???
 
 """
-guess = int(input("How many passwords to generate? "))  # will be deprecated when a database will be added
+  # will be deprecated when a database will be added
 # length = int(input("Enter Length: "))
 pattern = input("Enter Pattern: ")
 for char in pattern:
@@ -65,6 +67,4 @@ for char in pattern:
                     print("error")
                     pass
 """
-# for i in range(guess):
-#    password = "".join(choice(strings + digits + specChars) for x in range(len(pattern)))
-#    print(password)
+#
