@@ -39,11 +39,43 @@ def pattern_loader(userinput):
 pattern_loader(input())
 number_of_passwords = int(input("How many passwords to generate? "))
 for i in range(number_of_passwords):
-    if lst[i] == "A":
+    if "A" and "a" and "1" and "*" in lst:
+        password = "".join(choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation) for x in range(len(lst)))
+        print(password)
+    elif "A" and "a" in lst:
+        password = "".join(choice(string.ascii_uppercase + string.ascii_lowercase) for x in range(len(lst)))
+        print(password)
+    elif "A" and "1" in lst:
+        password = "".join(choice(string.ascii_uppercase + string.digits) for x in range(len(lst)))
+        print(password)
+    elif "A" and "*" in lst:
+        password = "".join(choice(string.ascii_uppercase + string.punctuation) for x in range(len(lst)))
+        print(password)
+    elif "1" and "a" in lst:
+        password = "".join(choice(string.digits + string.ascii_lowercase) for x in range(len(lst)))
+        print(password)
+    elif "*" and "a" in lst:
+        password = "".join(choice(string.punctuation + string.ascii_lowercase) for x in range(len(lst)))
+        print(password)
+    elif "1" and "*" in lst:
+        password = "".join(choice(string.digits + string.punctuation) for x in range(len(lst)))
+        print(password)
+    elif "A" in lst:
         password = "".join(choice(string.ascii_uppercase) for x in range(len(lst)))
         print(password)
-
+    elif "a" in lst:
+        password = "".join(choice(string.ascii_lowercase) for x in range(len(lst)))
+        print(password)
+    elif "1" in lst:
+        password = "".join(choice(string.digits) for x in range(len(lst)))
+        print(password)
+    elif "*" in lst:
+        password = "".join(choice(string.punctuation) for x in range(len(lst)))
+        print(password)
+    else:
+        print("invalid pattern")
 # To fight randomness or not ???
+
 
 """
   # will be deprecated when a database will be added
